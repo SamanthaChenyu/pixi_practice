@@ -33,7 +33,7 @@ const Bunny = forwardRef((props, ref, rotation, img) => {
       ref={ref}
       image={forntFooterRight}
       anchor={0.5}
-      scale={0.2}
+      scale={0.5}
       rotation={rotation}
       {...props}
     />
@@ -44,12 +44,13 @@ const BunniesContainer = ({ ...props }) => {
   const i = useIteration(0.08);
   return (
     <Container x={250} y={250} {...props}>
-      <Bunny x={-50} y={-50} rotation={Math.cos(i) * -0.4} />
-      <Bunny x={50} y={-50} rotation={Math.cos(i) * 0.4} img={backFooter_Right} />
-      <Sprite x={0} y={0} scale={0.2} image={body} rotation={0} />
-     <Bunny x={-50} y={50} rotation={Math.cos(i) * -0.4} />
+      
+      
+      <Sprite x={-145.25} y={-108} image={body} rotation={0} scale={0.5}/>
+
+      <Sprite x={80} y={89} anchor={0.5} scale={0.5} rotation={Math.cos(i) * -0.35} image={backFooter_Right} />
      {/* frontFooter(left) */}
-      <Bunny x={50} y={10} rotation={Math.cos(i) * 0.4} img={forntFooterRight} />
+      <Sprite x={10} y={100} anchor={0.5} scale={0.5} rotation={Math.cos(i) * 0.35} image={forntFooterRight} />
       {/* frontFooter(Right) */}
     </Container>
   );
@@ -65,7 +66,7 @@ const App = () => {
         options={{ backgroundColor: 0x1099bb }}
       >
         <Viewport width={width} height={height}>
-          <BunniesContainer scale={2} />
+          <BunniesContainer scale={1} />
         </Viewport>
       </Stage>
     </>
