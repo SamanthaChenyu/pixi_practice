@@ -5,8 +5,9 @@ import { Stage, Container, Sprite, PixiComponent, useApp, useTick } from '@inlet
 import Viewport from './Viewport';
 
 import body from './body.png';
-import backFooter_Right from './backFooter_Right.png';
+import backFooterRight from './backFooter_Right.png';
 import forntFooterRight from './frontFooter_Right.png';
+import frontFooterLeft from './frontFooter_Left.png';
 
 const { Texture } = PIXI;
 
@@ -15,42 +16,36 @@ PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 const width = 500;
 const height = 500;
 
-const useIteration = (incr = 1) => {
-  const [i, setI] = React.useState(0);
-  
+const BunniesContainer = ({ ...props }) => {
+  const [i, setI] = useState(0);
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
+
   useTick((delta) => {
-    setI(i => i + incr * delta);
+    
+  function test(i) {
+    const positionY = Math.sin(i/2) * 10;
+    if(positionY > 9) {
+      //console.log(positionY)
+      return 9.99;
+    }
+      return positionY;
+  }
+
+    setI(i => i + 0.08 * delta);
+    setY(test(i));
   });
 
-  return i;
-};
-
-const Bunny = forwardRef((props, ref, rotation, img) => {
-  // abstracted away, see settings>js
-  const i = useIteration(0.1);
-  return (
-    <Sprite
-      ref={ref}
-      image={forntFooterRight}
-      anchor={0.5}
-      scale={0.5}
-      rotation={rotation}
-      {...props}
-    />
-  );
-});
-
-const BunniesContainer = ({ ...props }) => {
-  const i = useIteration(0.08);
   return (
     <Container x={250} y={250} {...props}>
       
-      
-      <Sprite x={-145.25} y={-108} image={body} rotation={0} scale={0.5}/>
+      <Sprite x={-78} y={y + 90} anchor={0.5} scale={0.5} rotation={Math.cos(i) * -0.4} image={frontFooterLeft} />      
+      <Sprite x={0} y={y} anchor={0.5} image={body} rotation={0} scale={0.5}/>
 
-      <Sprite x={80} y={89} anchor={0.5} scale={0.5} rotation={Math.cos(i) * -0.35} image={backFooter_Right} />
+      <Sprite x={80} y={y + 90} anchor={0.5} scale={0.5} rotation={Math.cos(i) * -0.35} image={backFooterRight} />
      {/* frontFooter(left) */}
-      <Sprite x={10} y={100} anchor={0.5} scale={0.5} rotation={Math.cos(i) * 0.35} image={forntFooterRight} />
+      <Sprite x={10} y={y + 100} anchor={0.5} scale={0.5} rotation={Math.cos(i) * 0.35} image={forntFooterRight} />
       {/* frontFooter(Right) */}
     </Container>
   );
@@ -63,7 +58,7 @@ const App = () => {
       <Stage
         width={width}
         height={height}
-        options={{ backgroundColor: 0x1099bb }}
+        options={{ backgroundColor: 0x242835 }}
       >
         <Viewport width={width} height={height}>
           <BunniesContainer scale={1} />
