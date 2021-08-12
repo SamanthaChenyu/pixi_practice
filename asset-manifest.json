@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/pixi_practice/static/css/main.a617e044.chunk.css",
+    "main.js": "/pixi_practice/static/js/main.c8b39808.chunk.js",
+    "main.js.map": "/pixi_practice/static/js/main.c8b39808.chunk.js.map",
+    "runtime-main.js": "/pixi_practice/static/js/runtime-main.e8b59182.js",
+    "runtime-main.js.map": "/pixi_practice/static/js/runtime-main.e8b59182.js.map",
+    "static/js/2.28a50a80.chunk.js": "/pixi_practice/static/js/2.28a50a80.chunk.js",
+    "static/js/2.28a50a80.chunk.js.map": "/pixi_practice/static/js/2.28a50a80.chunk.js.map",
+    "static/js/3.77659fcc.chunk.js": "/pixi_practice/static/js/3.77659fcc.chunk.js",
+    "static/js/3.77659fcc.chunk.js.map": "/pixi_practice/static/js/3.77659fcc.chunk.js.map",
+    "index.html": "/pixi_practice/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/pixi_practice/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.28a50a80.chunk.js.LICENSE.txt": "/pixi_practice/static/js/2.28a50a80.chunk.js.LICENSE.txt",
+    "static/media/body.755fb08f.png": "/pixi_practice/static/media/body.755fb08f.png",
+    "static/media/tail.32c0522c.png": "/pixi_practice/static/media/tail.32c0522c.png",
+    "static/media/unicon.54a6c34b.png": "/pixi_practice/static/media/unicon.54a6c34b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8b59182.js",
+    "static/js/2.28a50a80.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.c8b39808.chunk.js"
+  ]
+}
