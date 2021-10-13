@@ -46,9 +46,9 @@ const BunniesContainer = ({ ...props }) => {
       <Sprite x={0} y={y} anchor={0.5} image={body} rotation={0} scale={0.5}/>
       <Sprite x={-50} y={y +-90} anchor={0.5} image={unicon} scale={0.5} />
       <Sprite x={80} y={y + 90} anchor={0.5} scale={0.5} rotation={Math.cos(i) * -0.35} image={backFooterRight} />
-     {/* frontFooter(left) */}
+
       <Sprite x={10} y={y + 100} anchor={0.5} scale={0.5} rotation={Math.cos(i) * 0.35} image={forntFooterRight} />
-      {/* frontFooter(Right) */}
+
     </Container>
   );
 }
